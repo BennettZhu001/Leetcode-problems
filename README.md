@@ -1,2 +1,4 @@
-# Leetcode-problems
-This is a repo of leetcode problems.
+ # Leetcode-problems
+
+  This is a repository of my process for
+  solving LeetCode problems.
