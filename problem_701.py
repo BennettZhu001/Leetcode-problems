@@ -33,3 +33,36 @@ class Solution:
                 pointer.left = TreeNode(val, None, None)
                 return root
         return root
+
+    # This solution turns out to be slow.
+    # You should break the if, elif, elif, elif into nested if else in order to reduce the number of
+    # conditions you need to check.
+    # Essentially, if you nest the conditions, you are doing binary search.
+    # If you don't do nessted conditions, you are searching the while space linearly.
+    #
+    #
+    #
+
+    def insertIntoBST_faster(
+        self, root: Optional[TreeNode], val: int
+    ) -> Optional[TreeNode]:
+        new_node = TreeNode(val, None, None)
+        if not root:
+            root = new_node
+            return root
+        pointer = root
+        while pointer:
+            if pointer.val < val:
+                if pointer.right:
+                    pointer = pointer.right
+                else:
+                    pointer.right = new_node
+                    break
+            else:
+                if pointer.left:
+                    pointer = pointer.left
+                else:
+                    pointer.left = new_node
+                    break
+
+        return root
